@@ -1,0 +1,30 @@
+.container
+  .container.flex.justify-end
+    %a.block.rounded-lg.bg-blue-700.text-center.px-5.py-2.mb-5.text-white{:href => new_time_sheet_path} Create
+
+  .relative.overflow-x-auto.shadow-md.sm:rounded-lg
+    %table.w-full.text-sm.text-left.text-gray-500.dark:text-gray-400
+      %thead.text-xs.text-gray-700.uppercase.bg-gray-50.dark:bg-gray-700.dark:text-gray-400
+        %tr
+          %th.px-6.py-3{:scope => "col"}
+            Date
+          %th.px-6.py-3{:scope => "col"}
+            Start time
+          %th.px-6.py-3{:scope => "col"}
+            Finish time
+          %th.px-6.py-3{:scope => "col"}
+            Value
+          %th.px-6.py-3{:scope => "col"}
+            %span.sr-only Edit
+      %tbody
+        - @entries.each do |entry|
+          %tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700
+            %th.px-6.py-4
+              = entry.date.strftime("%d/%m/%Y")
+            %td.px-6.py-4
+              = entry.start_time.strftime("%H:%M")
+            %td.px-6.py-4
+              = entry.finish_time.strftime("%H:%M")
+            %td.px-6.py-4 $100
+            %td.px-6.py-4.text-right
+              = link_to "Delete", time_sheet_path(entry), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'font-medium text-red-500 dark:text-blue-500'

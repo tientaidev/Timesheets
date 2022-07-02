@@ -40,3 +40,5 @@
 .idea/**/dictionaries
 .idea/**/shelf
 .idea/*.iml
+
+node_modules/
