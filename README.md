@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Techstack
+- Ruby on Rails: A framework of Ruby.
+- Tailwindcss: Weploy use Tailwindcss so I try it in this app. 
+- Heroku: I'm familiar with Heroku. If I had more time, I would try AWS.
+- PostgreSQL: I'm familiar with it. Easy to deploy as well.
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone git@github.com:tientaidev/Timesheets.git
+cd TimeSheets
+```
 
-* Configuration
+### Install dependencies
 
-* Database creation
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-* Database initialization
+```shell
+bundle
+npm install
+```
 
-* How to run the test suite
+### Initialize the database
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rails db:create db:migrate
+```
 
-* Deployment instructions
+### Test
 
-* ...
+````shell
+rails test
+````
+
+## Serve
+
+To run server locally
+
+```shell
+rails s
+```
+
+You can also access deployed version at:
+(https://tientai-timesheets.herokuapp.com/)
