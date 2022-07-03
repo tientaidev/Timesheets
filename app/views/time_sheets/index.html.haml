@@ -25,6 +25,7 @@
               = entry.start_time.strftime("%H:%M")
             %td.px-6.py-4
               = entry.finish_time.strftime("%H:%M")
-            %td.px-6.py-4 $100
+            %td.px-6.py-4
+              = "$ #{entry.value}"
             %td.px-6.py-4.text-right
               = link_to "Delete", time_sheet_path(entry), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'font-medium text-red-500 dark:text-blue-500'

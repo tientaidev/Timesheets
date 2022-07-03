@@ -12,10 +12,18 @@ class TimeSheet < ApplicationRecord
     start_time..finish_time
   end
 
+  def total_hours
+    (finish_time - start_time) / 3600
+  end
+
+  def regular_hours(regular_start_time, regular_end_time)
+    ([regular_end_time, finish_time].min - [regular_start_time, start_time].max) / 3600
+  end
+
   private
 
   def validate_other_time_overlap
-    other_times = TimeSheet.all
+    other_times = TimeSheet.where(date: date)
     is_overlapping = other_times.any? do |other_time|
       period.overlaps?(other_time.period)
     end
