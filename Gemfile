@@ -73,3 +73,5 @@ end
 
 gem "tailwindcss-rails", "~> 2.0"
 gem "haml-rails", "~> 2.0"
+
+gem "byebug", "~> 11.1", :groups => [:development, :test]
