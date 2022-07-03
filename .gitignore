@@ -42,3 +42,4 @@
 .idea/*.iml
 
 node_modules/
+/.byebug_history
